@@ -1,7 +1,7 @@
 import threading
 import socket
 host = '127.0.0.1'
-port = 59002
+port = 59003
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind((host, port))
 server.listen()
@@ -47,7 +47,8 @@ def receive():
         client.send('\nDigite mensagens abaixo:\n\n '.encode('utf-8'))
         thread = threading.Thread(target=handle_client, args=(client,))
         thread.start()
-
+        if message == 'a':
+           broadcast(f'a o krl')
 
 if __name__ == "__main__":
     receive()
