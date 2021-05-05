@@ -45,7 +45,7 @@ def receive():
         client.send('\nVocê está conectado,seja bem vindo ao chat e mantenha o respeito!\n '.encode('utf-8'))
         thread = threading.Thread(target=handle_client, args=(client,))
         thread.start()
-
+ 
 
 if __name__ == "__main__":
     receive()
