@@ -29,7 +29,6 @@ def client_receive():
 
 def client_send():
     while True:
-        input('>>> ')
         message = f'<\033[1;31m@{alias}\033[m> {input("")}'
         client.send(message.encode('utf-8'))
 
