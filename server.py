@@ -29,8 +29,7 @@ def handle_client(client):
             broadcast(f'O \033[1;31m{alias}\033[m saiu do chat! '.encode('utf-8'))
             aliases.remove(alias)
             break
-            if message == 'a':
-               broadcast(f'cu')
+
 # Main function to receive the clients connection
 
 
