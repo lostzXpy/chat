@@ -10,7 +10,7 @@ clear()
 a = '[\033[1;31mi\033[m]'
 alias = input('{} Digite seu nickname: \033[1;31m')
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client.connect(('127.0.0.1', 59000))
+client.connect(('127.0.0.1', 37674))
 
 def client_receive():
     while True:
