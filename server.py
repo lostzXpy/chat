@@ -43,12 +43,11 @@ def receive():
         aliases.append(alias)
         clients.append(client)
         print(f'The alias of this client is {alias}'.encode('utf-8'))
+        print('Bem vindo ao chat {alias}!\n')
         broadcast(f'O \033[1;31m{alias}\033[m acabou de entrar no chat! '.encode('utf-8'))
-        client.send('\nDigite mensagens abaixo:\n\n '.encode('utf-8'))
+        client.send('\nVocê está conectado\n================================================== '.encode('utf-8'))
         thread = threading.Thread(target=handle_client, args=(client,))
         thread.start()
-        if message == 'a':
-           broadcast(f'a o krl')
 
 if __name__ == "__main__":
     receive()
