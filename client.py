@@ -32,10 +32,6 @@ def client_send():
         message = f'<\033[1;31m@{alias}\033[m> {input("")}'
         client.send(message.encode('utf-8'))
 
-
-if message == '!kick':
-   client.send('cu')
-
 receive_thread = threading.Thread(target=client_receive)
 receive_thread.start()
 
