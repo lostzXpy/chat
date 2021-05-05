@@ -16,9 +16,9 @@ client.connect(('127.0.0.1', 37675))
 def client_receive():
     while True:
         try:
-            message = client.recv(1024)
+            message = client.recv(1024).decode('utf-8')
             if message == "alias?":
-                client.send(alias)
+                client.send(alias.encode('utf-8'))
             else:
                 print(message)
         except:
@@ -30,7 +30,7 @@ def client_receive():
 def client_send():
     while True:
         message = f'<\033[1;31m@{alias}\033[m> {input("")}'
-        client.send(message)
+        client.send(message.encode('utf-8'))
 
 
 receive_thread = threading.Thread(target=client_receive)
@@ -38,3 +38,4 @@ receive_thread.start()
 
 send_thread = threading.Thread(target=client_send)
 send_thread.start()
+ 
