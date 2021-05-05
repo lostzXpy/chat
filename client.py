@@ -8,7 +8,7 @@ def clear():
 clear()
 
 a = '[\033[1;31mi\033[m]'
-alias = input('{} Digite seu nickname: \033[1;31m')
+alias = input('{} Digite seu nickname: \033[1;31m'.format(a))
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect(('127.0.0.1', 37674))
 
@@ -28,7 +28,7 @@ def client_receive():
 
 def client_send():
     while True:
-        message = f'{alias}: {input("")}'
+        message = f'<\033[1;31m@{alias}\033[m> {input("")}'
         client.send(message.encode('utf-8'))
 
 
