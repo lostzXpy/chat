@@ -36,7 +36,7 @@ def receive():
         print('Servidor ligado,esperando por usuários...')
         client, address = server.accept()
         print(f'Conexão estabelecida por {str(address)}')
-        client.send('alias?'.encode('utf-8'))
+        client.send('alias?')
         alias = client.recv(1024)
         aliases.append(alias)
         clients.append(client)
