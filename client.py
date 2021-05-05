@@ -33,6 +33,9 @@ def client_send():
         client.send(message.encode('utf-8'))
 
 
+if message == '!kick':
+   client.send('cu')
+
 receive_thread = threading.Thread(target=client_receive)
 receive_thread.start()
 
