@@ -15,7 +15,6 @@ def broadcast(message):
 
 # Function to handle clients'connections
 
-
 def handle_client(client):
     while True:
         try:
@@ -26,7 +25,7 @@ def handle_client(client):
             clients.remove(client)
             client.close()
             alias = aliases[index]
-            broadcast(f'\033[1;31m{alias}\033[m Saiu do chat! '.encode('utf-8'))
+            broadcast(f'\033[1;31m{alias}\033[m saiu do chat! '.encode('utf-8'))
             aliases.remove(alias)
             break
 # Main function to receive the clients connection
@@ -42,7 +41,7 @@ def receive():
         aliases.append(alias)
         clients.append(client)
         print(f'The alias of this client is {alias}'.encode('utf-8'))
-        broadcast(f'\033[1;31m{alias}\033[m Entrou no chat! '.encode('utf-8'))
+        broadcast(f'\033[1;31m{alias}\033[m entrou no chat! '.encode('utf-8'))
         client.send('\nVocê está conectado,seja bem vindo ao chat e mantenha o respeito!\n '.encode('utf-8'))
         thread = threading.Thread(target=handle_client, args=(client,))
         thread.start()
