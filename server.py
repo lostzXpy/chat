@@ -44,7 +44,7 @@ def receive():
         clients.append(client)
         print(f'The alias of this client is {alias}'.encode('utf-8'))
         broadcast(f'\033[mO \033[1;31m{alias}\033[m acabou de entrar no chat! '.encode('utf-8'))
-        client.send('\nVocê está conectado\n\n==================================================\n\n '.encode('utf-8'))
+        client.send('\nVocê está conectado\nChat criado em 06/05/2021 ás 05:24\nCriado por: @onelost.exe\n\n==================================================\n '.encode('utf-8'))
         thread = threading.Thread(target=handle_client, args=(client,))
         thread.start()
 
